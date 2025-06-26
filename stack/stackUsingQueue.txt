@@ -1,0 +1,101 @@
+🔸 Approach 1: Stack using 2 Queues
+⚙️ Logic:
+q1 → main queue
+
+q2 → temporary queue used during push operation
+
+👉 push(x):
+Sabse pehle x ko q2 mein daalo.
+
+Fir q1 ke saare elements q2 mein daal do.
+
+Swap q1 aur q2. Ab q1 ke front mein hamesha latest element hoga → just like top of stack.
+
+👉 pop():
+Simply q1.pop() → jo top tha, wahi front hai.
+
+👉 top():
+Return q1.front().
+
+👉 empty():
+Return q1.empty().
+
+📌 Example Dry Run:
+cpp
+Copy
+Edit
+Stack s;
+s.push(10);   // q1 = [10]
+s.push(20);   // q2 = [20], q1 = [10] → q2 = [20, 10] → swap → q1 = [20, 10]
+s.push(30);   // q2 = [30], q1 = [20,10] → q2 = [30,20,10] → swap → q1 = [30,20,10]
+So, top = 30
+
+✅ Code (2 Queues):
+cpp
+Copy
+Edit
+void push(int x) {
+    q2.push(x);
+    while (!q1.empty()) {
+        q2.push(q1.front());
+        q1.pop();
+    }
+    swap(q1, q2);
+}
+   
+   ==============================================================================
+
+   🔸 Approach 2: Stack using 1 Queue
+⚙️ Logic:
+Sirf ek queue chahiye.
+
+Jab bhi push(x) karo:
+
+x ko queue mein push karo.
+
+Queue ke size - 1 elements ko baar baar pop + push karo (rotate) → taaki x front pe aa jaaye.
+
+👉 push(x):
+queue.push(x)
+
+size = q.size()
+
+Loop size-1 times:
+
+pop front
+
+push back
+
+👉 pop():
+Just q.pop() → latest element hai front pe.
+
+👉 top():
+q.front()
+
+📌 Example Dry Run:
+cpp
+Copy
+Edit
+push(1) → q = [1]
+push(2) → q = [2,1]
+push(3) → q = [3,2,1]
+So front of queue = 3 = top of stack ✅
+
+✅ Code (1 Queue):
+cpp
+Copy
+Edit
+void push(int x) {
+    q.push(x);
+    int size = q.size();
+    for (int i = 0; i < size - 1; i++) {
+        q.push(q.front());
+        q.pop();
+    }
+}
+✅ Summary Table:
+Operation	2 Queues	1 Queue
+Push	        O(n)	  O(n)
+Pop	            O(1)	  O(1)
+Top         	O(1)	  O(1)
+Space       	More	  Less
