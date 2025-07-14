@@ -3,6 +3,17 @@
     "files.associations": {
         "vector": "cpp",
         "queue": "cpp",
-        "xstring": "cpp"
-    }
+        "xstring": "cpp",
+        "algorithm": "cpp",
+        "utility": "cpp"
+    },
+    "editor.formatOnSave": true,
+    "files.autoSave": "afterDelay",
+    "editor.wordWrap": "on",
+    "editor.fontFamily": "Patrick Hand",
+    "editor.letterSpacing": 2.5,
+    "editor.fontWeight": "bold",
+    "editor.fontSize": 20,
+    "editor.mouseWheelZoom": true,
+    "editor.formatOnPaste": true
 }
