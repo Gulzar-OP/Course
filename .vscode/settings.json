@@ -5,7 +5,11 @@
         "queue": "cpp",
         "xstring": "cpp",
         "algorithm": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "compare": "cpp",
+        "xstddef": "cpp",
+        "xutility": "cpp",
+        "iostream": "cpp"
     },
     "editor.formatOnSave": true,
     "files.autoSave": "afterDelay",
