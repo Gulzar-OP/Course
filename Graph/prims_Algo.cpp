@@ -24,7 +24,7 @@ public:
     }
     void primsAlgo(int src)
     {
-        priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
+        priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;  //wt, v
         vector<bool> mst(V, false);
 
         pq.push(make_pair(0, src));
