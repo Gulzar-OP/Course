@@ -5,15 +5,12 @@
 #include <queue>
 #include <climits>
 using namespace std;
-
 class Edge
 {
 public:
     int v;
     int wt;
-
-    Edge(int v, int wt)
-    {
+    Edge(int v, int wt){
         this->v = v;
         this->wt = wt;
     }
@@ -24,14 +21,11 @@ void dijkstra(int src, vector<vector<Edge>> graph, int V)
     vector<int> dist(V, INT_MAX);
     pq.push(make_pair(0, src));
     dist[src] = 0;
-    while (pq.size() > 0)
-    {
+    while (pq.size() > 0){
         int u = pq.top().second;
         pq.pop();
-
         vector<Edge> edge = graph[u];
-        for (Edge e : edge)
-        {
+        for (Edge e : edge){
             if (dist[e.v] > dist[u] + e.wt)
             {
                 dist[e.v] = dist[u] + e.wt;
@@ -39,8 +33,7 @@ void dijkstra(int src, vector<vector<Edge>> graph, int V)
             }
         }
     }
-    for (int d : dist)
-    {
+    for (int d : dist){
         cout << d << " ";
     }
     cout << endl;

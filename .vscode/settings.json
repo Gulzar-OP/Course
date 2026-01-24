@@ -9,7 +9,8 @@
         "compare": "cpp",
         "xstddef": "cpp",
         "xutility": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "ostream": "cpp"
     },
     "editor.formatOnSave": true,
     "files.autoSave": "afterDelay",
